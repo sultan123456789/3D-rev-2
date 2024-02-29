@@ -21,8 +21,7 @@
 
 <style type="text/css">
 /* The class of components handled by the viewer */
-.viewerComponent {
-}
+
 
 /* Center the login form */
 #loginContainer {
@@ -51,7 +50,7 @@
 
 /* Style the form button */
 #loginForm button {
-  background-color: #007bff;
+  background-color: #ed1c24;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -59,7 +58,7 @@
 }
 
 #loginForm button:hover {
-  background-color: #0056b3;
+  background-color: #00a933;
 }
 
 /* Add Telkomsel logo */
@@ -120,7 +119,7 @@ function authenticate() {
     // Di sini Anda dapat menambahkan logika autentikasi, misalnya dengan membandingkan dengan database pengguna
     
     // Contoh sederhana: jika username adalah "admin" dan password adalah "12345", maka izinkan akses
-    if (username === "tsgayungan" && password === "tsgayungan") {
+    if (username === "ttcgayungan" && password === "ttcgayungan") {
         document.getElementById("loginContainer").style.display = "none";
         document.getElementById("homeViewer").style.display = "block";
         return false; // agar form tidak di-submit
