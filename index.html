@@ -30,7 +30,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0px 0px 30px rgba(255, 1, 1, 0.588);
@@ -41,9 +41,9 @@
 #loginForm input[type="text"],
 #loginForm input[type="password"],
 #loginForm button {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -64,8 +64,8 @@
 
 /* Add Telkomsel logo */
 .telkomsel-logo {
-  width: 200px;
-  margin-bottom: 20px;
+  width: 300px;
+  margin-bottom: 20px; /* Remove bottom margin */
 }
 
 /* Additional styling for labels */
@@ -80,7 +80,7 @@ label {
 <body>
 <div id="loginContainer">
   <!-- Add Telkomsel logo -->
-  <img src="https://soerabaja45.co.id/wp-content/uploads/2021/12/logo-telkomsel-baru-e1638845397379.png" alt="Telkomsel Logo" class="telkomsel-logo">
+  <img src="Telkomsel Building Management.png" alt="Telkomsel Logo" class="telkomsel-logo">
   
   <!-- Formulir Masuk -->
   <form id="loginForm" onsubmit="return authenticate()">
@@ -96,7 +96,7 @@ label {
   <!-- Sweet Home 3D Viewer Button -->
   <button id="viewHomeButton" onclick='viewHomeInOverlay("3D%20rev%202.zip", 
               {roundsPerMinute:    1,                              
-               widthByHeightRatio: 8/4,                            
+               widthByHeightRatio: 4/3,                            
                navigationPanel: "none",                            
                aerialViewButtonText: "Aerial view",                
                virtualVisitButtonText: "Virtual visit",            
