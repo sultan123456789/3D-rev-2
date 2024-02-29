@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>View home with Sweet Home 3D HTML5 Viewer</title>
+<!-- Add Telkomsel logo -->
+<link rel="icon" href="https://soerabaja45.co.id/wp-content/uploads/2021/12/logo-telkomsel-baru-e1638845397379.png" type="image/png">
+
+<!--  Copy the following scripts in your page header -->
+<script type="text/javascript" src="lib/big.min.js"></script>
+<script type="text/javascript" src="lib/gl-matrix-min.js"></script>
+<script type="text/javascript" src="lib/jszip.min.js"></script>
+<script type="text/javascript" src="lib/core.min.js"></script>
+<script type="text/javascript" src="lib/geom.min.js"></script>
+<script type="text/javascript" src="lib/stroke.min.js"></script>
+<script type="text/javascript" src="lib/batik-svgpathparser.min.js"></script>
+<script type="text/javascript" src="lib/jsXmlSaxParser.min.js"></script>
+<script type="text/javascript" src="lib/triangulator.min.js"></script>
+<script type="text/javascript" src="lib/viewmodel.min.js"></script>
+<script type="text/javascript" src="lib/viewhome.min.js"></script>
+
+<style type="text/css">
+/* The class of components handled by the viewer */
+.viewerComponent {
+}
+
+/* Center the login form */
+#loginContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(255, 1, 1, 0.588);
+  font-family: Arial, sans-serif;
+}
+
+/* Style the form inputs */
+#loginForm input[type="text"],
+#loginForm input[type="password"],
+#loginForm button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the form button */
+#loginForm button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+}
+
+#loginForm button:hover {
+  background-color: #0056b3;
+}
+
+/* Add Telkomsel logo */
+.telkomsel-logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Additional styling for labels */
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<div id="loginContainer">
+  <!-- Add Telkomsel logo -->
+  <img src="https://soerabaja45.co.id/wp-content/uploads/2021/12/logo-telkomsel-baru-e1638845397379.png" alt="Telkomsel Logo" class="telkomsel-logo">
+  
+  <!-- Formulir Masuk -->
+  <form id="loginForm" onsubmit="return authenticate()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<div id="homeViewer" style="display: none;">
+  <!-- Sweet Home 3D Viewer Button -->
+  <button id="viewHomeButton" onclick='viewHomeInOverlay("3D%20rev%202.zip", 
+              {roundsPerMinute:    1,                              
+               widthByHeightRatio: 8/4,                            
+               navigationPanel: "none",                            
+               aerialViewButtonText: "Aerial view",                
+               virtualVisitButtonText: "Virtual visit",            
+               activateCameraSwitchKey: true,                      
+               viewerControlsAdditionalHTML: "",                   
+               readingHomeText: "Reading",                         
+               readingModelText: "Model",                          
+               noWebGLSupportError: "No WebGL support"             
+              })'>View home</button>
+</div>
+
+<div style="position: absolute; bottom: 5px; text-align: center; width: 95%; z-index: -1">
+  <a href="http://www.sweethome3d.com">Sweet Home 3D</a> HTML5 Viewer / Version 1.6 - Distributed under GNU General Public License
+</div>
+
+<script>
+function authenticate() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    // Di sini Anda dapat menambahkan logika autentikasi, misalnya dengan membandingkan dengan database pengguna
+    
+    // Contoh sederhana: jika username adalah "admin" dan password adalah "12345", maka izinkan akses
+    if (username === "tsgayungan" && password === "tsgayungan") {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("homeViewer").style.display = "block";
+        return false; // agar form tidak di-submit
+    } else {
+        alert("Invalid username or password");
+        return false; // agar form tidak di-submit
+    }
+}
+</script>
+
+</body>
+</html>
